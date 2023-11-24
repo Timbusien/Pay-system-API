@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from database import models
 
 # Ссылка на базу данных
-SQALCHEMY_DATABASE_URI = 'sqlite://pay.db'
+SQALCHEMY_DATABASE_URI = 'sqlite:///pay.db'
 
 # Подключаемся к базе данных
 engine = create_engine(SQALCHEMY_DATABASE_URI)
@@ -13,7 +13,7 @@ engine = create_engine(SQALCHEMY_DATABASE_URI)
 SessionLocal = sessionmaker(bind=engine)
 
 # Общий класс для моделей
-Base = declarative_base('')
+Base = declarative_base()
 
 
 # Функция для генерации связи для базы данных
