@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from database import models
 
 # Ссылка на базу данных
 SQALCHEMY_DATABASE_URI = 'sqlite:///pay.db'
@@ -14,6 +13,8 @@ SessionLocal = sessionmaker(bind=engine)
 
 # Общий класс для моделей
 Base = declarative_base()
+
+from database import models
 
 
 # Функция для генерации связи для базы данных

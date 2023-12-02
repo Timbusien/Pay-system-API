@@ -17,6 +17,20 @@ def add_card_my_db(user_id, card_number, balance, card_name, exp_date):
     return 'Карта была успешно добавлена!'
 
 
+# Редактировать карту
+def edit_card_my_db(card_id, edit_type, new_data):
+    db = next(get_database())
+    exact_card = db.query(UserCard).filter_by(card_id=card_id).first()
+
+    if exact_card:
+        if edit_type == 'card_number':
+            exact_card.card_number = new_data
+        elif edit_type == 'balance':
+            exact_card.balance = new_data
+        elif edit_type == 'card_name':
+            exact_card.card_name = new_data
+
+
 # Вывести все карты определенного пользователя через user_id
 def get_exact_user_cards_my_db(user_id):
     db = next(get_database())

@@ -6,6 +6,7 @@ from database import Base
 # Таблица для пользователей
 class User(Base):
     __tablename__ = 'users'
+    user_id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String)
     surname = Column(String)
     number = Column(String)
